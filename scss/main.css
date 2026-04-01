@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url("/node_modules/bootstrap-icons/font/bootstrap-icons.css");
+@import url("../node_modules/bootstrap-icons/font/bootstrap-icons.css");
 /*!
  * Bootstrap  v5.3.8 (https://getbootstrap.com/)
  * Copyright 2011-2025 The Bootstrap Authors
@@ -11979,4 +11979,17 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
+}
+body {
+  font-family: "Hind Madurai", serif;
+}
+
+.navbar-brand, .nav-link, .navbar {
+  font-family: "Hind Madurai", serif;
+  color: #B6AC97;
+}
+
+.nav-link.active {
+  font-family: "Hind Madurai", serif;
+  color: #906427 !important;
 }/*# sourceMappingURL=main.css.map */

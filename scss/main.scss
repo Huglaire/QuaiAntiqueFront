@@ -1,16 +1,44 @@
 @import url("../node_modules/bootstrap-icons/font/bootstrap-icons.css");
 @import 'custom';
 
+
+html{
+  position: relative;
+  min-height: 100%;
+}
+
+footer.footer{
+  padding: 15px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+main{
+  margin-bottom: 260px;
+}
+
 body {
   font-family: "Hind Madurai", serif;
 }
 
-.navbar-brand, .nav-link, .navbar {
+.navbar-brand, .nav-link, .navbar, .h3{
   font-family: "Hind Madurai", serif;
-  color: #B6AC97;
+  color: white;
+}
+
+p{
+  font-family: "Hind Madurai", serif;
+  font-size: 18px;
 }
 
 .nav-link.active {
   font-family: "Hind Madurai", serif;
-  color: #906427 !important;
+  color: #B6AC97 !important;
 }
+
+.nav-link, .nav-link.active{
+  margin: 0 40px;
+}
+
+

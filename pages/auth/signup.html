@@ -8,25 +8,49 @@
         <div class="mb-3">
             <label for="NomInput" class="form-label">Nom</label>
             <input type="text" class="form-control" id="NomInput" placeholder="Votre nom" name="Nom"> 
+            <div class="invalid-feedback">
+                Votre nom est requis
+            </div>
         </div>
         <div class="mb-3">
             <label for="PrenomInput" class="form-label">Prénom</label>
             <input type="text" class="form-control" id="PrenomInput" placeholder="Votre prénom" name="Prenom"> 
+            <div class="invalid-feedback">
+                Votre prénom est requis
+            </div>        
         </div>
         <div class="mb-3">
           <label for="EmailInput" class="form-label">Email</label>
           <input type="email" class="form-control" id="EmailInput" placeholder="test@mail.fr" name="Email"> 
+            <div class="invalid-feedback">
+                Le format de cette adresse mail n'est pas au bon format
+            </div>
+            <div class="valid-feedback">
+                Adresse mail valide
+            </div>
         </div>
         <div class="mb-3">
           <label for="PasswordInput" class="form-label">Mot de passe</label>
           <input type="password" class="form-control" id="PasswordInput" name="Password">
+                <div class="invalid-feedback">
+                    Le mot de passe doit comporter au moins 8 caractères, dont une majuscule, une minuscule, un chiffre et un caractère spécial.
+                </div>
+                <div class="valid-feedback">
+                    Le mot de passe est valide.
+                </div>
         </div>
         <div class="mb-5">
-            <label for="ValidatePasswordInput" class="form-label">Validez votre mot de passe</label>
+            <label for="ValidatePasswordInput" class="form-label">Confirmez votre mot de passe</label>
             <input type="password" class="form-control" id="ValidatePasswordInput" name="PasswordConfirm">
-          </div>
+                <div class="invalid-feedback">
+                    La confirmation de votre mot de passe n'est pas identique à la saisie de votre mot de passe
+                </div>
+                <div class="valid-feedback">
+                    Les mots de passe sont identiques.
+                </div>
+        </div>
         <div class="text-center mb-4">
-            <button type="submit" class="btn btn-primary">Inscription</button>
+            <button type="submit" class="btn btn-primary" id="btn-validation-inscription">Inscription</button>
         </div>
     </form>
     <div class="text-center pt-3">

@@ -4,7 +4,7 @@
     </div>
 </div>
 <div class="container">
-    <form>
+    <form id="formulaireInscription">
         <div class="mb-3">
             <label for="NomInput" class="form-label">Nom</label>
             <input type="text" class="form-control" id="NomInput" placeholder="Votre nom" name="Nom"> 
@@ -31,7 +31,7 @@
         </div>
         <div class="mb-3">
           <label for="PasswordInput" class="form-label">Mot de passe</label>
-          <input type="password" class="form-control" id="PasswordInput" name="Password">
+          <input type="password" class="form-control" id="PasswordInput" name="mdp">
                 <div class="invalid-feedback">
                     Le mot de passe doit comporter au moins 8 caractères, dont une majuscule, une minuscule, un chiffre et un caractère spécial.
                 </div>
@@ -50,7 +50,7 @@
                 </div>
         </div>
         <div class="text-center mb-4">
-            <button type="submit" class="btn btn-primary" id="btn-validation-inscription">Inscription</button>
+            <button type="button" class="btn btn-primary" id="btn-validation-inscription">Inscription</button>
         </div>
     </form>
     <div class="text-center pt-3">

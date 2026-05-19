@@ -37,7 +37,7 @@ function checkCredentials() {
         const token = result.apiToken;
         setToken(token);
         setCookie(RoleCookieName, result.roles[0], 7);
-        window.location.replace("/");
+        globalThis.location.replace("/");
     })
     .catch((error) => console.error(error));
 }

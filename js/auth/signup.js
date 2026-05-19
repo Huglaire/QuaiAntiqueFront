@@ -81,15 +81,15 @@ function validateConfirmationPassword(inputPwd, inputConfirmPwd){
 
 
 function validateRequired(input) {
-    if(input.value != ''){
-        input.classList.add("is-valid");
-        input.classList.remove("is-invalid");
-        return true;
-    }
-    else{
+    if(input.value == ''){
         input.classList.add("is-invalid");
         input.classList.remove("is-valid");
         return false;
+    }
+    else{
+        input.classList.add("is-valid");
+        input.classList.remove("is-invalid");
+        return true;
     }
 }
 
@@ -130,8 +130,8 @@ function InscrireUtilisateur(){
             " ! Votre inscription a été prise en compte."
         );
 
-        window.history.pushState({}, "", "/signin");
-        window.dispatchEvent(new PopStateEvent("popstate"));
+        globalThis.history.pushState({}, "", "/signin");
+        globalThis.dispatchEvent(new PopStateEvent("popstate"));
 
     })
     .catch((error) => console.error(error));

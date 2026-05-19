@@ -98,3 +98,10 @@ function showAndHideElementsForRoles() {
         }
     });
 }
+
+//Assainissement des entrées client pour éviter une faille XSS
+function sanitizeHtml(text){
+    const tempHtml = document.createElement('div');
+    tempHtml.textContent = text;
+    return tempHtml.innerHTML;
+}

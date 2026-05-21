@@ -60,6 +60,7 @@ function isConnected() {
     }
 }
 
+//Rendre apparents ou non des éléments selon le rôle de l'utilisateur
 function showAndHideElementsForRoles() {
     const userconnected = isConnected();
     const role = getRole();
@@ -108,6 +109,7 @@ function sanitizeHtml(text){
     return tempHtml.innerHTML;
 }
 
+//Récupération des infos utilisateur
 function getInfosUser(){
     const myHeaders = new Headers();
     myHeaders.append("X-AUTH-TOKEN", getToken());

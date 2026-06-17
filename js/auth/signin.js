@@ -25,6 +25,8 @@ function checkCredentials() {
 
 console.log("apiURL =", apiURL);
 
+fetch(apiURL + "login", requestOptions)
+
     fetch(apiURL+"login", requestOptions)
     .then((response) => {
         if(response.ok){

@@ -23,6 +23,8 @@ function checkCredentials() {
     redirect: "follow"
 };
 
+console.log("apiURL =", apiURL);
+
     fetch(apiURL+"login", requestOptions)
     .then((response) => {
         if(response.ok){

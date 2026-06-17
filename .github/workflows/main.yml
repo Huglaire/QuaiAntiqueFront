@@ -22,9 +22,7 @@ jobs:
         server: ftp-quaiantiquehugo.alwaysdata.net
         username: quaiantiquehugo
         password : ${{ secrets.ftp_password }}
-
         protocol: ftps 
-        security: strict 
         port: 21
         
         exclude: |

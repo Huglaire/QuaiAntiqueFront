@@ -3,9 +3,11 @@ const tokenCookieName = "accesstoken";
 const signoutBtn = document.getElementById("signout-btn");
 const RoleCookieName = "role";
 
-signoutBtn.addEventListener("click", signOut);
+if (signoutBtn) {
+    signoutBtn.addEventListener("click", signOut);
+}
 
-const apiURL = "http://127.0.0.1:8000/api/";
+const apiURL = "https://main-bvxea6i-jmt6g4defo5xq.fr-3.platformsh.site/api/";
 
 function getRole(){
     return getCookie(RoleCookieName);
@@ -13,7 +15,7 @@ function getRole(){
 
 function signOut() {
     eraseCookie(tokenCookieName);
-    eraseCookie("RoleCookieName");
+    eraseCookie(RoleCookieName);
     globalThis.location.replace("/");
 }
 
@@ -82,13 +84,13 @@ function showAndHideElementsForRoles() {
                 break;
 
             case 'admin':
-                if(userconnected && role == "admin"){
+                if(userconnected && role === "ROLE_ADMIN"){
                     shouldShow = true;
                 }
                 break;
 
             case 'client':
-                if(userconnected && role == "client"){
+                if(userconnected && role === "ROLE_USER"){
                     shouldShow = true;
                 }
                 break;
@@ -115,24 +117,28 @@ function getInfosUser(){
     myHeaders.append("X-AUTH-TOKEN", getToken());
 
     const requestOptions = {
-    method: "GET",
-    headers: myHeaders,
-    redirect: "follow"
+        method: "GET",
+        headers: myHeaders,
+        redirect: "follow"
     };
 
-    fetch(apiURL+"account/me", requestOptions)
-    .then(response =>{
-        if(response.ok){
-            return response.json();
-        }
-        else{
-            console.log("Impossible de récupérer les informations de l'utilisateur")
-        }
-    })
-    .then(result => {
-        return result;
-    })
-    .catch(error =>{
-        console.error("erreur lors de la récupération des données utilisateur", error);
-    });
+    return fetch(apiURL + "me", requestOptions)
+        .then(response => {
+            if(response.ok){
+                return response.json();
+            }
+
+            throw new Error("Impossible de récupérer les informations utilisateur");
+        });
+}
+
+//Ajout d'un "if" pour éviter une erreur 401 en cas de token null
+if (isConnected()) {
+    getInfosUser()
+        .then(user => {
+            console.log(user);
+        })
+        .catch(error => {
+            console.error(error);
+        });
 }
